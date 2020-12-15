@@ -27,9 +27,9 @@
           </div>
           <table class = "w3-table w3-bordered w3-border">
             <tr class="w3-white">
-              <th class = "w3-center" ng-click = "changeSort('Brand')">Brand</th>
-              <th class = "w3-center" ng-click = "changeSort('Model')">Model</th>
-              <th class = "w3-center" ng-click = "changeSort('Country')">Country</th>
+              <th class = "w3-center" style = "color : {{ brandColor }}" ng-click = "changeSort('Brand')">Brand</th>
+              <th class = "w3-center" style = "color : {{ modelColor }}" ng-click = "changeSort('Model')">Model</th>
+              <th class = "w3-center" style = "color : {{ countryColor }}" ng-click = "changeSort('Country')">Country</th>
               <th class = "w3-center">{{ " " }}</th>
             </tr>
             <tr ng-repeat="x in carList | orderBy:sortBy | filter : searchT" class="w3-light-grey">
