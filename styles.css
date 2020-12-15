@@ -1,0 +1,11 @@
+ html, body {
+    margin: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+.fondo {
+  padding-top: 2.5cm;
+}
+.round{
+  border-radius: 25px;
+}

@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title>Index</title>
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="cars.js"></script>
+    <style>
+
+    </style>
+</head0>
+
+    <body class="w3-black fondo" ng-app = "carsApp">
+        <div class="w3-top">
+            <div class="w3-bar w3-black ">
+                <a target="_blank" class="w3-bar-item w3-button"><img src="./Photos/gran_turismo-logo.jpg" id="logo" style="width:4.5em;height:4.5em;"></a>
+                <a href="#!/" class="w3-bar-item w3-button w3-padding-32 w3-hover-blue">Cars</a>
+                <a href="#!/compare" class="w3-bar-item w3-button w3-padding-32 w3-hover-blue">Compare</a>
+            </div>
+        </div>
+        <div class = "w3-container" ng-app="carsApp" ng-controller="carsCtrl" class="w3-card-2 w3-margin">
+          <table class = "w3-table w3-bordered w3-border">
+            <tr class="w3-white">
+              <th class = "w3-center" ng-click = "changeSort('Brand')">Brand</th>
+              <th class = "w3-center" ng-click = "changeSort('Model')">Model</th>
+              <th class = "w3-center" ng-click = "changeSort('Country')">Country</th>
+            </tr>
+            <tr ng-repeat="x in carList | orderBy:sortBy" class="w3-light-grey">
+              <td>{{ x.Brand }}</td>
+              <td>{{ x.Model }}</td>
+              <td>{{ x.Country }}</td>
+            </tr>
+          </table>
+        </div>
