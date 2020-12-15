@@ -32,9 +32,9 @@
               <th class = "w3-center" ng-click = "changeSort('Country')">Country</th>
             </tr>
             <tr ng-repeat="x in carList | orderBy:sortBy | filter : searchT" class="w3-light-grey">
-              <td>{{ x.Brand }}</td>
-              <td>{{ x.Model }}</td>
-              <td>{{ x.Country }}</td>
+              <td class = "w3-center"><img src="./Photos/{{ x.Brand }}.png" style="width:4.5em;height:4.5em;"></td>
+              <td class = "w3-center">{{ x.Model }}</td>
+              <td class = "w3-center"><img src="./Photos/{{ x.Country }}.png" style="width:6em;height:4.5em;"></td>
             </tr>
           </table>
         </div>
