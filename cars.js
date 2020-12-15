@@ -24,13 +24,28 @@ var app = angular.module("carsApp", ["ngRoute"]);
 app.controller('carsCtrl', function($scope, $http) {
   $scope.sortBy = "Brand";
   $scope.brandColor = "green";
-  $scope.modelColor = "white";
-  $scope.countryColor = "white";
+  $scope.modelColor = "black";
+  $scope.countryColor = "black";
   $http.get("carlist.php").then(function(response) {
     $scope.carList = response.data.list;
   });
   $scope.changeSort = function (x) {
     $scope.sortBy = x;
+    if(x == 'Brand'){
+      $scope.brandColor = "green";
+      $scope.modelColor = "black";
+      $scope.countryColor = "black";
+    }else{
+      if(x == 'Model'){
+        $scope.brandColor = "black";
+        $scope.modelColor = "green";
+        $scope.countryColor = "black";
+      }else{
+        $scope.brandColor = "black";
+        $scope.modelColor = "black";
+        $scope.countryColor = "green";
+      }
+    }
   }
   $scope.selectInfo = function (x){
     $scope.selectedCar = x;
