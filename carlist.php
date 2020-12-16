@@ -19,6 +19,16 @@
       "Weight": "1,655 kilograms",
       "Year": "2007",
       "Photo": "BMW M3.png"
+    },
+    {
+      "Brand": "Toyota",
+      "Model": "SPRINTER TRUENO GT-APEX (AE86)",
+      "Country": "Japan",
+      "Power": "128 BHP",
+      "Layout": "FR",
+      "Weight": "940 kilograms",
+      "Year": "1983",
+      "Photo": "Toyota SPRINTER TRUENO GT-APEX.png" 
     }
   ]
 }
