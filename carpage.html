@@ -1,0 +1,39 @@
+<div class = "w3-container" ng-app="carsApp" ng-controller="carsCtrl" class="w3-card-2 w3-margin">
+    <div class = "w3-container">
+      <p class = "w3-center"><input class = "w3-input" placeholder = "Search:" type = "text" ng-model = "searchT"></p>
+    </div>
+    <table class = "w3-table w3-bordered w3-border">
+      <tr class="w3-white">
+        <th class = "w3-center" style = "color : {{ brandColor }}" ng-click = "changeSort('Brand')">Brand</th>
+        <th class = "w3-center" style = "color : {{ modelColor }}" ng-click = "changeSort('Model')">Model</th>
+        <th class = "w3-center" style = "color : {{ countryColor }}" ng-click = "changeSort('Country')">Country</th>
+        <th class = "w3-center">{{ " " }}</th>
+      </tr>
+      <tr ng-repeat="x in carList | orderBy:sortBy | filter : searchT" class="w3-light-grey">
+        <td class = "w3-center"><img src="./Photos/{{ x.Brand }}.png" style="width:4.5em;height:4.5em;"></td>
+        <td class = "w3-center">{{ x.Model }}</td>
+        <td class = "w3-center"><img src="./Photos/{{ x.Country }}.png" style="width:6em;height:4.5em;"></td>
+        <td class="w3-center" ><button ng-click = "selectInfo(x)" onclick="document.getElementById('id01').style.display='block'" onclick="modal()">+</button></td>
+      
+      <div id="id01" class="w3-modal">
+        <div class="w3-modal-content w3-animate-zoom ">
+          <div class="w3-container">
+              <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright" style = "color: black">&times;</span>
+              <p class="w3-center"><img src="./Photos/{{ selectedCar.Photo }}" style="width:18em;height:10em;"></p>
+              <ul>
+                <li> {{ "Brand: " + selectedCar.Brand }} </li>
+                <li> {{ "Model: " + selectedCar.Model }} </li>
+                <li> {{ "Country: " + selectedCar.Country }} </li>
+                <li> {{ "Power: " + selectedCar.Power }} </li>
+                <li> {{ "Layout: " + selectedCar.Layout }} </li>
+                <li> {{ "Weight: " + selectedCar.Weight }} </li>
+                <li> {{ "Year: " + selectedCar.Year }} </li>
+              </ul>
+          </div>
+        </div>
+      </div>
+    </tr>
+    </table>
+  </div>
+  <!-- <div ng-view></div> -->
+</body>

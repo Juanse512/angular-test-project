@@ -21,6 +21,15 @@ window.onclick = function(event) {
 }
 
 var app = angular.module("carsApp", ["ngRoute"]);
+app.config(function($routeProvider) {
+  $routeProvider
+  .when("/", {
+    templateUrl : "carpage.html"
+  })
+  .when("/compare", {
+    templateUrl : "compare.html"
+  });
+});
 app.controller('carsCtrl', function($scope, $http) {
   $scope.sortBy = "Brand";
   $scope.brandColor = "green";
@@ -46,17 +55,8 @@ app.controller('carsCtrl', function($scope, $http) {
         $scope.countryColor = "green";
       }
     }
-  }
+  };
   $scope.selectInfo = function (x){
     $scope.selectedCar = x;
-  }
-});
-app.config(function($routeProvider) {
-    $routeProvider
-    .when("/", {
-        templateUrl : "index.html"
-    })
-    .when("/compare", {
-        templateUrl : "compare.html"
-    })
+  };
 });
